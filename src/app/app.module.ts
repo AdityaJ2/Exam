@@ -3,16 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TeamComponent } from './components/team/team.component';
+
+import { TeamService } from './services/team.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TeamComponent,
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [TeamService],
+  bootstrap: [TeamService]
 })
 export class AppModule { }
+
+
+
